@@ -1,5 +1,5 @@
 const startApplication = require('./dataGatekeeper.js');
 
-// startApplication();
+startApplication();
 
 console.log('starApplication: ', startApplication);
