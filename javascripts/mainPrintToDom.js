@@ -25,6 +25,7 @@ const domString = (categories, movieElements) => {
     stringToPrint += `</thead>`;
     stringToPrint += `<tbody>`;
     movieElements.forEach ((element) => {
+      // Add If statement to compare element ID and item ID
       stringToPrint += `<tr>`;
       stringToPrint += `<td>`;
       stringToPrint += `<input type="checkbox" id="${element.id}" data-${element.categoryId} value="movie-element"><label for="contactChoice1">${element.name}</label>`;
