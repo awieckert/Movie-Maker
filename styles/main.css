@@ -1,3 +1,12 @@
 body {
-  background-color: blue;
+  background-color: burlywood;
+}
+
+.movie-items {
+  border: 1px solid black;
+  height: 100vh;
+}
+
+.green {
+  color: green;
 }
