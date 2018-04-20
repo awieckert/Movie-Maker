@@ -1,22 +1,17 @@
+const addEvents = require('./events.js');
+
 const mainDiv = document.getElementById('main-div');
 
 const printToDom = (categories, movieElements) => {
-  mainDiv.innerHTML = domString(categories, movieElements);
+  mainDiv.innerHTML += domString(categories, movieElements);
+  addEvents.addCheckBoxEvents();
 };
 
 const domString = (categories, movieElements) => {
   let stringToPrint = '';
-  // categories.forEach((item) => {
-  //   stringToPrint += `<h4>${item.categoryName}</h4>`;
-  // });
-  // movieElements.forEach((item) => {
-  //   stringToPrint += `<h4>${item.name}</h4>`;
-  // });
-  // return stringToPrint;
-
-  stringToPrint += `<div class="left-side-stuff col-md-6">`;
+  stringToPrint += `<div class="right-side-stuff col-md-6">`;
   categories.forEach((item) => {
-    stringToPrint += `<div id="left-container" class="col-md-10">`;
+    stringToPrint += `<div id="right-container" class="col-md-10">`;
     stringToPrint +=  `<table class="table table-striped table-responsive table-hover table-condensed">`;
     stringToPrint += `<thead>`;
     stringToPrint += `<tr>`;
@@ -24,16 +19,20 @@ const domString = (categories, movieElements) => {
     stringToPrint += `</tr>`;
     stringToPrint += `</thead>`;
     stringToPrint += `<tbody>`;
+    stringToPrint += `<tr>`;
     movieElements.forEach ((element) => {
-      // Add If statement to compare element ID and item ID
-      stringToPrint += `<tr>`;
-      stringToPrint += `<td>`;
-      stringToPrint += `<input type="checkbox" id="${element.id}" data-${element.categoryId} value="movie-element"><label for="contactChoice1">${element.name}</label>`;
-      stringToPrint += `</td>`;
-      stringToPrint += `</tr>`;
+      if (element.categoryId === item.id) {
+        stringToPrint += `<td>`;
+        stringToPrint += `<input class="checkbox" type="checkbox" id="${element.id}" data-category="${element.categoryId}" value="movie-element"><label for="contactChoice1">${element.name}</label>`;
+        stringToPrint += `</td>`;
+      }
     });
+    stringToPrint += `</tr>`;
     stringToPrint += `</tbody>`;
+    stringToPrint += `</table>`;
+    stringToPrint += `</div>`;
   });
+  stringToPrint += `</div>`;
   return stringToPrint;
 };
 
