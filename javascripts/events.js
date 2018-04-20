@@ -19,6 +19,7 @@ const moveToItems = (e) => {
     }
   });
   console.log('movieElements: ', currentElement);
+  data.setCurrentBudget(currentElement[0].cost);
   printItems(currentElement);
 };
 
