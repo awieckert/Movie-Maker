@@ -1,4 +1,4 @@
-const selectedItemsDiv = document.getElementById('left-container');
+const selectedItemsDiv = document.getElementById('right-container');
 
 const printItems = (selectedItem) => {
   console.log('selectedDiv' ,selectedItemsDiv);
