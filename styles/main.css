@@ -11,9 +11,14 @@ body {
   color: green;
 }
 
+
 #left-container {
   /* z-index: 3; */
   height: 300px;
   border: 1px solid black;
   display: inline-block;
 }
+
+/* #large-left-container {
+  display: flex;
+} */
