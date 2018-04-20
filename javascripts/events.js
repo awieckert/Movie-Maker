@@ -1,4 +1,5 @@
 const data = require('./data.js');
+const printItems = require('./secondPrintToDom.js');
 const allTheCheckBoxes = document.getElementsByClassName('checkbox');
 
 const addCheckBoxEvents = () => {
@@ -18,6 +19,7 @@ const moveToItems = (e) => {
     }
   });
   console.log('movieElements: ', currentElement);
+  printItems(currentElement);
 };
 
 module.exports = {

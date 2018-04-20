@@ -9,9 +9,9 @@ const printToDom = (categories, movieElements) => {
 
 const domString = (categories, movieElements) => {
   let stringToPrint = '';
-  stringToPrint += `<div class="left-side-stuff col-md-6">`;
+  stringToPrint += `<div class="right-side-stuff col-md-6">`;
   categories.forEach((item) => {
-    stringToPrint += `<div id="left-container" class="col-md-10">`;
+    stringToPrint += `<div id="right-container" class="col-md-10">`;
     stringToPrint +=  `<table class="table table-striped table-responsive table-hover table-condensed">`;
     stringToPrint += `<thead>`;
     stringToPrint += `<tr>`;
