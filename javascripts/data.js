@@ -20,7 +20,7 @@ const getCategories = () => {
 };
 
 const setProjectBudget = (datas) => {
-  projectBudget += datas;
+  projectBudget = datas;
 };
 
 const getProjectBudget = () => {
