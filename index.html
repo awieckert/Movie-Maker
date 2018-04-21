@@ -22,23 +22,23 @@
               <a class="navbar-brand" href="#">Movie Maker!</a>
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-              <form class="navbar-form navbar-right">
+              <div class="navbar-form navbar-right">
                 <div class="form-group">
-                  <input type="text" class="form-control" placeholder="Set Budget">
+                  <input type="text" class="form-control" placeholder="Search">
                 </div>
                 <button id="submit-budget" type="submit" class="btn btn-default">Submit Budget</button>
-              </form>
+              </div>
             </div>
           </div>
         </nav>
 
-        <div class="col-md-6">
-          <h1 id="starting-budget"></h1>
+        <div class="col-md-6 text-center col-md-offset-3">
+          <h1 id="project-budget"></h1>
         </div>
 
         <div class="col-md-10 col-md-offset-1">
         <div class="progress">
-            <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+            <div id='progress-bar' class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
               <span class="sr-only">60% Complete</span>
             </div>
           </div>
@@ -154,13 +154,12 @@
 
 
 
-
     </div>
 
 
     <div id="large-right-container" class="text-center col-md-6">
       <div class="movie-items col-md-10">
-        <h2 id="current-budget" class="green">$0!</h2>
+        <h2 id="current-budget" class="">$0!</h2>
         <div id="right-container" class="col-md-12">
 
         </div>
@@ -175,10 +174,10 @@
 
 
 
-  <!-- <script
+  <script
   src="https://code.jquery.com/jquery-3.3.1.min.js"
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous"></script> -->
+  crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   <script src="./dist/app.js"></script>
 </body>
