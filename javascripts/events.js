@@ -25,6 +25,7 @@ const moveToItems = (e) => {
   data.compareBudgets();
   console.log('progressBar: ', progressBar);
   progressBar.setAttribute('style', 'width: ' + data.getCurrentPercent() + '%;');
+  data.canIMakeMovie();
 };
 
 const submitBudget = (e) => {

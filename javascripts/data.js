@@ -5,6 +5,7 @@ let currentBudget = 0;
 let currentPercent = 0;
 
 const currentBudgetH2 = document.getElementById('current-budget');
+const makeTheMovie = document.getElementById('make-movie');
 
 const setMovieElements = (data) => {
   movieElements = data;
@@ -65,6 +66,19 @@ const compareBudgets = () => {
   setCurrentPercent();
 };
 
+const canIMakeMovie = () => {
+  const containerCollection = document.getElementById('right-container').children;
+  const arrayToCheck = [];
+  for (let k = 0; k < containerCollection.length; k++) {
+    arrayToCheck.push(containerCollection[k].id);
+  }
+  if (arrayToCheck.indexOf(`category1`) !== -1 && arrayToCheck.indexOf(`category2`) !== -1 && arrayToCheck.indexOf(`category3`) !== -1 && arrayToCheck.indexOf(`category4`) !== -1 && (currentBudget <= projectBudget)) {
+    makeTheMovie.innerHTML = `<h2>Hell Yeah! Make the Movie!</h2>`;
+  } else {
+    makeTheMovie.innerHTML = `<h2>No, No, You no make the movie...</h2>`;
+  };
+};
+
 module.exports = {
   setCategories,
   setMovieElements,
@@ -79,4 +93,5 @@ module.exports = {
   compareBudgets,
   currentPercent,
   getCurrentPercent,
+  canIMakeMovie,
 };
