@@ -3,6 +3,7 @@ const printItems = require('./secondPrintToDom.js');
 const allTheCheckBoxes = document.getElementsByClassName('checkbox');
 const submitBudgetButton = document.getElementById('submit-budget');
 const projectBudgetH1 = document.getElementById('project-budget');
+const progressBar = document.getElementById('progress-bar');
 
 const addCheckBoxEvents = () => {
   submitBudgetButton.addEventListener('click', submitBudget);
@@ -12,18 +13,18 @@ const addCheckBoxEvents = () => {
 };
 
 const moveToItems = (e) => {
-  console.log('checkbox Event: ', e);
   const targetId = e.target.id;
-  console.log('Target ID: ', targetId);
   const currentElement = [];
   data.getMovieElements().forEach((item) => {
     if (targetId === item.id) {
       currentElement.push(item);
     }
   });
-  console.log('movieElements: ', currentElement);
   data.setCurrentBudget(currentElement[0].cost);
   printItems(currentElement);
+  data.compareBudgets();
+  console.log('progressBar: ', progressBar);
+  progressBar.setAttribute('style', 'width: ' + data.getCurrentPercent() + '%;');
 };
 
 const submitBudget = (e) => {

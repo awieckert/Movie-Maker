@@ -2,6 +2,9 @@ let movieElements = [];
 let categories = [];
 let projectBudget = 0;
 let currentBudget = 0;
+let currentPercent = 0;
+
+const currentBudgetH2 = document.getElementById('current-budget');
 
 const setMovieElements = (data) => {
   movieElements = data;
@@ -43,6 +46,25 @@ const resetCurrentBudget = () => {
   currentBudget = 0;
 };
 
+const setCurrentPercent = () => {
+  currentPercent = ((currentBudget / projectBudget) * 100);
+};
+
+const getCurrentPercent = () => {
+  return currentPercent;
+};
+
+const compareBudgets = () => {
+  if (projectBudget >= currentBudget) {
+    currentBudgetH2.classList.add('green');
+    currentBudgetH2.classList.remove('red');
+  } else {
+    currentBudgetH2.classList.remove('green');
+    currentBudgetH2.classList.add('red');
+  }
+  setCurrentPercent();
+};
+
 module.exports = {
   setCategories,
   setMovieElements,
@@ -54,4 +76,7 @@ module.exports = {
   getProjectBudget,
   resetCurrentBudget,
   resetProjectBudget,
+  compareBudgets,
+  currentPercent,
+  getCurrentPercent,
 };

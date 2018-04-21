@@ -11,6 +11,10 @@ body {
   color: green;
 }
 
+.red {
+  color: red;
+}
+
 
 #right-container {
   /* z-index: 3; */
