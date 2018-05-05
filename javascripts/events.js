@@ -8,24 +8,27 @@ const progressBar = document.getElementById('progress-bar');
 const addCheckBoxEvents = () => {
   submitBudgetButton.addEventListener('click', submitBudget);
   for (let i = 0; i < allTheCheckBoxes.length; i++) {
-    allTheCheckBoxes[i].addEventListener('click', moveToItems);
+    allTheCheckBoxes[i].addEventListener('change', moveToItems);
   };
 };
 
 const moveToItems = (e) => {
-  const targetId = e.target.id;
-  const currentElement = [];
-  data.getMovieElements().forEach((item) => {
-    if (targetId === item.id) {
-      currentElement.push(item);
-    }
-  });
-  data.setCurrentBudget(currentElement[0].cost);
-  printItems(currentElement);
-  data.compareBudgets();
-  console.log('progressBar: ', progressBar);
-  progressBar.setAttribute('style', 'width: ' + data.getCurrentPercent() + '%;');
-  data.canIMakeMovie();
+  console.log('event: ', e);
+  if (e.target.checked) {
+    const targetId = e.target.id;
+    const currentElement = [];
+    data.getMovieElements().forEach((item) => {
+      if (targetId === item.id) {
+        currentElement.push(item);
+      }
+    });
+    data.setCurrentBudget(currentElement[0].cost);
+    printItems(currentElement);
+    data.compareBudgets();
+    console.log('progressBar: ', progressBar);
+    progressBar.setAttribute('style', 'width: ' + data.getCurrentPercent() + '%;');
+    data.canIMakeMovie();
+  }
 };
 
 const submitBudget = (e) => {
