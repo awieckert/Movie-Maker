@@ -1,5 +1,6 @@
 const data = require('./data.js');
 const printItems = require('./secondPrintToDom.js');
+const enable = require('./disabled.js');
 const allTheCheckBoxes = document.getElementsByClassName('checkbox');
 const submitBudgetButton = document.getElementById('submit-budget');
 const projectBudgetH1 = document.getElementById('project-budget');
@@ -35,6 +36,8 @@ const submitBudget = (e) => {
   const desiredBudget = e.target.parentNode.children[0].children[0].value;
   data.setProjectBudget(desiredBudget);
   projectBudgetH1.innerHTML = data.getProjectBudget();
+  enable.enableButtons();
+  enable.disableButtons();
 };
 
 module.exports = {

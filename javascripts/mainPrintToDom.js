@@ -1,10 +1,12 @@
 const addEvents = require('./events.js');
+const disabled = require('./disabled.js');
 
 const mainDiv = document.getElementById('main-div');
 
 const printToDom = (categories, movieElements) => {
   mainDiv.innerHTML += domString(categories, movieElements);
   addEvents.addCheckBoxEvents();
+  disabled.disableButtons();
 };
 
 const domString = (categories, movieElements) => {
