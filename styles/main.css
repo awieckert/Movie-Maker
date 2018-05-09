@@ -1,10 +1,13 @@
 body {
-  background-color: burlywood;
+  background-image: url('../img/background.jpg');
+  background-size: contain;
+  /* background-repeat: no-repeat; */
 }
 
 .movie-items {
   border: 1px solid black;
   height: 100vh;
+  border-radius: 5px;
 }
 
 .green {
