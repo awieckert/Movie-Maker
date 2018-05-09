@@ -18,6 +18,9 @@ body {
   color: red;
 }
 
+.current-budget {
+  color: white;
+}
 
 #right-container {
   /* z-index: 3; */
@@ -29,3 +32,11 @@ body {
 /* #large-left-container {
   display: flex;
 } */
+
+th {
+  color: white;
+}
+
+#make-movie {
+  color: white;
+}
