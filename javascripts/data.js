@@ -58,9 +58,9 @@ const getCurrentPercent = () => {
 const compareBudgets = () => {
   if (projectBudget >= currentBudget) {
     currentBudgetH2.classList.add('green');
-    currentBudgetH2.classList.remove('red');
+    currentBudgetH2.classList.remove('red', 'white');
   } else {
-    currentBudgetH2.classList.remove('green');
+    currentBudgetH2.classList.remove('green', 'white');
     currentBudgetH2.classList.add('red');
   }
   setCurrentPercent();

@@ -18,9 +18,20 @@ body {
   color: red;
 }
 
-.current-budget {
+.white {
   color: white;
 }
+
+#current-budget {
+  background-color: gray;
+  border-radius: 5px;
+}
+
+#project-budget {
+  background-color: gray;
+  border-radius: 5px;
+}
+
 
 #right-container {
   /* z-index: 3; */
