@@ -1,10 +1,13 @@
 body {
-  background-color: burlywood;
+  background-image: url('../img/background.jpg');
+  background-size: contain;
+  /* background-repeat: no-repeat; */
 }
 
 .movie-items {
   border: 1px solid black;
   height: 100vh;
+  border-radius: 5px;
 }
 
 .green {
@@ -15,6 +18,9 @@ body {
   color: red;
 }
 
+.current-budget {
+  color: white;
+}
 
 #right-container {
   /* z-index: 3; */
@@ -26,3 +32,11 @@ body {
 /* #large-left-container {
   display: flex;
 } */
+
+th {
+  color: white;
+}
+
+#make-movie {
+  color: white;
+}
