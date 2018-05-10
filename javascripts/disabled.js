@@ -1,6 +1,4 @@
-// const inputValue = document.getElementById('project-budget').innerHTML;
 const allTheBoxes = document.getElementsByClassName('checkbox');
-console.log('alltheBoxes: ', allTheBoxes);
 
 const enableButtons = () => {
   const inputValue = document.getElementById('project-budget').innerHTML;

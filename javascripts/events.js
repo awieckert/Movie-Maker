@@ -14,7 +14,6 @@ const addCheckBoxEvents = () => {
 };
 
 const moveToItems = (e) => {
-  console.log('event: ', e);
   if (e.target.checked) {
     const targetId = e.target.id;
     const currentElement = [];
@@ -26,7 +25,6 @@ const moveToItems = (e) => {
     data.setCurrentBudget(currentElement[0].cost);
     printItems(currentElement);
     data.compareBudgets();
-    console.log('progressBar: ', progressBar);
     progressBar.setAttribute('style', 'width: ' + data.getCurrentPercent() + '%;');
     data.canIMakeMovie();
   }
@@ -35,7 +33,7 @@ const moveToItems = (e) => {
 const submitBudget = (e) => {
   const desiredBudget = e.target.parentNode.children[0].children[0].value;
   data.setProjectBudget(desiredBudget);
-  projectBudgetH1.innerHTML = data.getProjectBudget();
+  projectBudgetH1.innerHTML = `$${data.getProjectBudget()}`;
   enable.enableButtons();
   enable.disableButtons();
 };
